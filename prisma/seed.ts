@@ -15,8 +15,21 @@ async function main() {
       },
     });
   }
+  let ticketType = await prisma.ticketType.findFirst();
+  let array
+  if(!ticketType){
+
+    array = await prisma.ticketType.createMany({
+      data:[
+        {name:"No Remote With Hotel", includesHotel:true, isRemote:false, price:600},
+        {name:"No Remote Without Hotel", includesHotel:false, isRemote:false, price:250},
+        {name:"Remote Without Hotel", includesHotel:false, isRemote:true, price:100}
+      ]
+    })
+  }
 
   console.log({ event });
+  console.log(array)
 }
 
 main()
