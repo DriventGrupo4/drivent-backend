@@ -1,7 +1,7 @@
-import { notFoundError, unauthorizedError } from "@/errors";
-import paymentRepository, { PaymentParams } from "@/repositories/payment-repository";
-import ticketRepository from "@/repositories/ticket-repository";
-import enrollmentRepository from "@/repositories/enrollment-repository";
+import { notFoundError, unauthorizedError } from '@/errors';
+import paymentRepository, { PaymentParams } from '@/repositories/payment-repository';
+import ticketRepository from '@/repositories/ticket-repository';
+import enrollmentRepository from '@/repositories/enrollment-repository';
 
 async function verifyTicketAndEnrollment(ticketId: number, userId: number) {
   const ticket = await ticketRepository.findTickeyById(ticketId);
@@ -29,9 +29,10 @@ async function getPaymentByTicketId(userId: number, ticketId: number) {
 
 async function paymentProcess(ticketId: number, userId: number, cardData: CardPaymentParams) {
   await verifyTicketAndEnrollment(ticketId, userId);
+  console.log(ticketId);
 
   const ticket = await ticketRepository.findTickeWithTypeById(ticketId);
-
+  console.log(ticket);
   const paymentData = {
     ticketId,
     value: ticket.TicketType.price,
@@ -40,19 +41,19 @@ async function paymentProcess(ticketId: number, userId: number, cardData: CardPa
   };
 
   const payment = await paymentRepository.createPayment(ticketId, paymentData);
-
+  console.log(payment);
   await ticketRepository.ticketProcessPayment(ticketId);
 
   return payment;
 }
 
 export type CardPaymentParams = {
-  issuer: string,
-  number: number,
-  name: string,
-  expirationDate: Date,
-  cvv: number
-}
+  issuer: string;
+  number: number;
+  name: string;
+  expirationDate: Date;
+  cvv: number;
+};
 
 const paymentService = {
   getPaymentByTicketId,
