@@ -41,9 +41,27 @@ async function main() {
     })
   }
 
+  let room = await prisma.room.findFirst();
+  let createRoom
+  if(!room){
+
+    createRoom = await prisma.room.createMany({
+      data:[
+        {name:"Single", capacity: 1, hotelId: 1, },
+        {name:"Double", capacity: 2, hotelId: 1,},
+        {name:"Triple", capacity: 3, hotelId: 1,},
+        {name:"Double", capacity: 2, hotelId: 2,},
+        {name:"Triple", capacity: 3, hotelId: 2,},
+        {name:"Single", capacity: 1, hotelId: 3,},
+        {name:"Double", capacity: 2, hotelId: 3,},
+      ]
+    })
+  }
+
   console.log({ event });
   console.log(array);
   console.log(createHotel);
+  console.log(createRoom);
 }
 
 main()
