@@ -28,8 +28,22 @@ async function main() {
     })
   }
 
+  let hotel = await prisma.hotel.findFirst();
+  let createHotel
+  if(!hotel){
+
+    createHotel = await prisma.hotel.createMany({
+      data:[
+        {name:"Driven Resort", image:"https://www.carpemundi.com.br/wp-content/uploads/2020/07/nannai-resort.jpg"},
+        {name:"Driven Palace", image:"https://triplover.com.br/wp-content/uploads/2020/03/Melhor-Hotel-Luxo.jpg"},
+        {name:"Driven World", image:"https://anaclaudiathorpe.ne10.uol.com.br/wp-content/uploads/2021/01/emiratespalace1-e1573771420434-1.jpg"}
+      ]
+    })
+  }
+
   console.log({ event });
-  console.log(array)
+  console.log(array);
+  console.log(createHotel);
 }
 
 main()
