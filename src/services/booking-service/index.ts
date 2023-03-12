@@ -36,6 +36,13 @@ async function getBooking(userId: number) {
 
   return booking;
 }
+async function getBookingsByRoom(roomId: number) {
+  const bookings = await bookingRepository.findByRoomId(roomId);
+  if(!bookings) {
+    throw notFoundError();
+  }
+  return bookings;
+}
 
 async function bookingRoomById(userId: number, roomId: number) {
   await checkEnrollmentTicket(userId);
@@ -62,6 +69,7 @@ async function changeBookingRoomById(userId: number, roomId: number) {
 const bookingService = {
   bookingRoomById,
   getBooking,
+  getBookingsByRoom,
   changeBookingRoomById,
 };
 

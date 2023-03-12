@@ -15,6 +15,15 @@ export async function listBooking(req: AuthenticatedRequest, res: Response) {
     return res.sendStatus(httpStatus.NOT_FOUND);
   }
 }
+export async function listBookingsByRoom(req: AuthenticatedRequest, res: Response) {
+  try {
+    const roomId  = parseInt(req.params.roomId);
+    const bookings = await bookingService.getBookingsByRoom(roomId);
+    return res.status(httpStatus.OK).send(bookings);
+  } catch (error) {
+    return res.sendStatus(httpStatus.NOT_FOUND);
+  }
+}
 
 export async function bookingRoom(req: AuthenticatedRequest, res: Response) {
   try {
