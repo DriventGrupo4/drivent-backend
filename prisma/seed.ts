@@ -60,6 +60,86 @@ async function main() {
       ]
     })
   }
+  let location = await prisma.location.findFirst();
+  if(!location){
+    await prisma.location.createMany({
+      data: [
+        {name: "Auditório Principal"},
+        {name: "Auditório Lateral"},
+        {name: "Sala de Workshop"}
+      ]
+    })
+  }
+  let activity = await prisma.activity.findFirst();
+  if(!activity){
+    await prisma.activity.createMany({
+      data:[
+        {
+          name:"Interfaces e Aplicações Front-end",
+          capacity: 10,
+          locationId: 1,
+          startDateTime: new Date("2023-03-27T08:00:00Z"),
+          endDateTime: new Date("2023-03-27T10:00:00Z"),
+        },
+        {
+          name: "Single Page Applications",
+          capacity: 10,
+          locationId: 1,
+          startDateTime: new Date("2023-03-27T10:00:00Z"),
+          endDateTime: new Date("2023-03-27T12:00:00Z"),
+        },
+        {
+          name: "Back-end (MongoDB)",
+          capacity: 5,
+          locationId: 2,
+          startDateTime: new Date("2023-03-27T08:00:00Z"),
+          endDateTime: new Date("2023-03-27T12:00:00Z")
+        },
+        {
+          name: "SQL",
+          capacity: 3,
+          locationId: 3,
+          startDateTime: new Date("2023-03-27T08:00:00Z"),
+          endDateTime: new Date("2023-03-27T10:00:00Z")
+        },
+        {
+          name: "Arquitetura e boas práticas",
+          capacity: 3,
+          locationId: 3,
+          startDateTime: new Date("2023-03-27T10:00:00Z"),
+          endDateTime: new Date("2023-03-27T12:00:00Z")
+        },
+        {
+          name: "Introdução ao Python",
+          capacity: 10,
+          locationId: 1,
+          startDateTime: new Date("2023-03-28T08:00:00Z"),
+          endDateTime: new Date("2023-03-28T12:00:00Z")
+        },
+        {
+          name: "Introdução ao Angular",
+          capacity: 5,
+          locationId: 2,
+          startDateTime: new Date("2023-03-28T08:00:00Z"),
+          endDateTime: new Date("2023-03-28T12:00:00Z")
+        },
+        {
+          name: "Programação em Java",
+          capacity: 10,
+          locationId: 1,
+          startDateTime: new Date("2023-03-29T08:00:00Z"),
+          endDateTime: new Date("2023-03-29T12:00:00Z")
+        },
+        {
+          name: "Aprenda a programar em PHP",
+          capacity: 3,
+          locationId: 3,
+          startDateTime: new Date("2023-03-29T08:00:00Z"),
+          endDateTime: new Date("2023-03-29T10:00:00Z")
+        },
+      ]
+    })
+  }
 
   console.log({ event });
   console.log(array);
