@@ -42,6 +42,7 @@ async function main() {
   }
 
   let room = await prisma.room.findFirst();
+  
   let createRoom
   if(!room){
 
