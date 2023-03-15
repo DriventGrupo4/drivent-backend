@@ -148,7 +148,6 @@ model Activity {
   Location      Location        @relation(fields: [locationId], references: [id])
   Matriculation Matriculation[]
 }
-
 model Matriculation {
   id         Int      @id @default(autoincrement())
   userId     Int
