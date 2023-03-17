@@ -147,6 +147,7 @@ model Activity {
   endDateTime   DateTime
   Location      Location        @relation(fields: [locationId], references: [id])
   Matriculation Matriculation[]
+  @@index(fields: [startDateTime])
 }
 model Matriculation {
   id         Int      @id @default(autoincrement())
