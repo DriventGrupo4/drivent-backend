@@ -1,5 +1,4 @@
 import { prisma } from '@/config';
-import { where } from 'sequelize';
 
 async function findActivities() {
   return prisma.activity.findMany();
