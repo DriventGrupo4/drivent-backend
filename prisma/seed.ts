@@ -78,64 +78,64 @@ async function main() {
           name:"Interfaces e Aplicações Front-end",
           capacity: 10,
           locationId: 1,
-          startDateTime: new Date("2023-03-27T08:00:00Z"),
-          endDateTime: new Date("2023-03-27T10:00:00Z"),
+          startDateTime: new Date("2023-03-27T09:00-0300"),
+          endDateTime: new Date("2023-03-27T10:00:00-0300"),
         },
         {
           name: "Single Page Applications",
           capacity: 10,
           locationId: 1,
-          startDateTime: new Date("2023-03-27T10:00:00Z"),
-          endDateTime: new Date("2023-03-27T12:00:00Z"),
+          startDateTime: new Date("2023-03-27T10:00:00-0300"),
+          endDateTime: new Date("2023-03-27T12:00:00-0300"),
         },
         {
           name: "Back-end (MongoDB)",
           capacity: 5,
           locationId: 2,
-          startDateTime: new Date("2023-03-27T08:00:00Z"),
-          endDateTime: new Date("2023-03-27T12:00:00Z")
+          startDateTime: new Date("2023-03-27T09:00-0300"),
+          endDateTime: new Date("2023-03-27T12:00:00-0300")
         },
         {
           name: "SQL",
           capacity: 3,
           locationId: 3,
-          startDateTime: new Date("2023-03-27T08:00:00Z"),
-          endDateTime: new Date("2023-03-27T10:00:00Z")
+          startDateTime: new Date("2023-03-27T09:00-0300"),
+          endDateTime: new Date("2023-03-27T10:00:00-0300")
         },
         {
           name: "Arquitetura e boas práticas",
           capacity: 3,
           locationId: 3,
-          startDateTime: new Date("2023-03-27T10:00:00Z"),
-          endDateTime: new Date("2023-03-27T12:00:00Z")
+          startDateTime: new Date("2023-03-27T10:00:00-0300"),
+          endDateTime: new Date("2023-03-27T12:00:00-0300")
         },
         {
           name: "Introdução ao Python",
           capacity: 10,
           locationId: 1,
-          startDateTime: new Date("2023-03-28T08:00:00Z"),
-          endDateTime: new Date("2023-03-28T12:00:00Z")
+          startDateTime: new Date("2023-03-28T09:00-0300"),
+          endDateTime: new Date("2023-03-28T12:00:00-0300")
         },
         {
           name: "Introdução ao Angular",
           capacity: 5,
           locationId: 2,
-          startDateTime: new Date("2023-03-28T08:00:00Z"),
-          endDateTime: new Date("2023-03-28T12:00:00Z")
+          startDateTime: new Date("2023-03-28T09:00-0300"),
+          endDateTime: new Date("2023-03-28T12:00:00-0300")
         },
         {
           name: "Programação em Java",
           capacity: 10,
           locationId: 1,
-          startDateTime: new Date("2023-03-29T08:00:00Z"),
-          endDateTime: new Date("2023-03-29T12:00:00Z")
+          startDateTime: new Date("2023-03-29T09:00-0300"),
+          endDateTime: new Date("2023-03-29T12:00:00-0300")
         },
         {
           name: "Aprenda a programar em PHP",
           capacity: 3,
           locationId: 3,
-          startDateTime: new Date("2023-03-29T08:00:00Z"),
-          endDateTime: new Date("2023-03-29T10:00:00Z")
+          startDateTime: new Date("2023-03-29T09:00-0300"),
+          endDateTime: new Date("2023-03-29T10:00:00-0300")
         },
       ]
     })

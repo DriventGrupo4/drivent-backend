@@ -16,9 +16,18 @@ async function postMatriculation(userId: number, activityId: number) {
   });
 }
 
+async function findByActivityId(activityId: number) {
+  return prisma.matriculation.findMany({
+    where: {
+      activityId
+    }
+  });
+}
+
 const matriculationRepository = {
   findMatriculationsByUserId,
-  postMatriculation
+  postMatriculation,
+  findByActivityId
 };
 
 export default matriculationRepository;
